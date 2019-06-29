@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Sales Dashboard{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<p><a href="{% url 'home' %}">Go to Home</a></p>
+<div class="container">
+   <h1> Hello {{ user.first_name }} {{ user.last_name }}</h1>
+   <div style="float: right;">
+   <h3>Personal Profile</h3>
+   <a href="https://imgbb.com/"><img src="https://i.ibb.co/pdJfzx9/profile-picture.jpg" alt="profile-picture" border="0" /></a>
+   <h4>About Me</h4>
+   <p>Hi, I'm Dan Englishby, I have a huge passion for web-development and programming. I love to learn and thrive from challenges.</p>
+</div>
+  
+   <div style="float: left;">
+   	 
+      <div>
+      	<h4>Your DashBoard</h4>
+         <table>
+    	<tr><td>Target for the month</td><td>7</td> <td> <td/><td>Days to month end</td><td>10</td></tr>
+		<tr><td>Sales till date</td><td>9</td> <td> <td/> <td>Expected closure for today</td><td>10</td></tr>
+		<tr>
+    </table>
+   </div>
+
+   <div>
+      	<h4>Your task for the day</h4>
+         <table>
+    	<tr><td>Target for the month</td><td>7</td> <td> <td/><td>Days to month end</td><td>10</td></tr>
+		<tr><td>Sales till date</td><td>9</td> <td> <td/> <td>Expected closure for today</td><td>10</td></tr>
+		<tr>
+    </table>
+   </div>
+
+
+</div>
+
+{% endif %}
+{% endblock %}

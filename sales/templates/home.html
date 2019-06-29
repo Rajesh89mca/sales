@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
-
 {% block content %}
 {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">logout</a></p>
+<div style="width:50%;margin:0 auto;">
+    <table>
+    	<tr><td><p><a href="{% url 'sales_dashboard' %}">My Dashboard</a></p></td>
+		<td><p><a href="{% url 'logout' %}">logout</a></p></td> </tr>
+		<tr>
+		<td><h3>{{ user.first_name }} {{ user.last_name }}</h3></td>
+		<td>Good Morning Welcome to sales Module</td>
+		</tr>
+        <tr>
+            <td>Today is {% now "l jS F Y H:i:a" %}</td>
+            <td></td>
+        </tr>
+         <tr>
+            <td>Youe last Log in was {{user.last_login}}</td>
+            <td></td>
+        </tr>
+    </table>
+</div>
 {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
+<div style="width:50%;margin:0 auto;">
+    <table>
+    	<tr><td><p></p></td>
+		<td><p></p>You are not logged in</td> </tr>
+		<tr>
+
+			<tr><td><p></p></td>
+		<td><p><a href="{% url 'login' %}">login</a></p></td> </tr>
+		<tr>
+    </table>
+</div>
 {% endif %}
 {% endblock %}
